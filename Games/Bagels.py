@@ -4,15 +4,13 @@ import random
 
 def main():
     num_digits = 3
-    max_guess = 20
+    max_guess = 5
     print('''
-    
-    The following game allows the user to deduce a three digit random integer.
+The following game allows the user to deduce a three digit random integer.
     the rules simply says that:
     1. if a digit is in the right place - Fermi
     2. if digit in the wrong place but exists in number - Gamma
     3. if digit not in number - Bagels
-    
     ''')
     guessing_number = getsecrectnumber(num_digits)
 
@@ -27,7 +25,7 @@ def main():
                 if user_num == guessing_number:
                     print('You have guessed the correct number!')
                     break
-                elif guesscount > max_guess:
+                elif guesscount == max_guess:
                     print('You have ran out of guesses!')
                     break
                 guesscount += 1
