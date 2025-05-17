@@ -37,3 +37,5 @@ def game():
             print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
             print("The dealer has dealt a higher number than you, hence you lose")
     print("Thanks for playing!")
+
+main()
