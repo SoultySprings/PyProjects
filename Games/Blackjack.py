@@ -1,4 +1,4 @@
-def main:
+def main():
     print("The game of Blackjack remade:")
     print('''The rules are simply that:
     1. You deal a number
