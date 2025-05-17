@@ -34,9 +34,8 @@ The following game allows the user to deduce a three digit random integer.
         reply = input("Do you wish to play again or quit? Y for Yes or N for No : ")
         if reply.lower() == 'y':
             print('Okay, all the best!')
-        elif reply.lower() == 'n':
-            print('Thank you for playing!')
-            break
+        else : print("The input is incorrect")
+    print('Thank you for playing!')
 
 def getsecrectnumber(num_digits):
     numbers = list(range(0, 9))
