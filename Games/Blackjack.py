@@ -1,4 +1,7 @@
+#Blackjack code for one user only
+
 import random
+
 
 def main():
     print("The game of Blackjack remade:")
