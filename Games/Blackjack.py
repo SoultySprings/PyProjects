@@ -29,13 +29,17 @@ def game():
             print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
             print("You have dealt a higher number than the dealer but below 21, hence you win")
     elif response == "S":
-        dealer_number = dealer_number + random.randint(1, 11)
+        while dealer_number<17:
+            dealer_number = dealer_number + random.randint(1, 11)
         if dealer_number > 21:
             print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
             print("The dealer has dealt a higher number than 21, hence you win")
         elif dealer_number > user_number and dealer_number <= 21:
             print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
             print("The dealer has dealt a higher number than you, hence you lose")
+        elif dealer_number < user_number:
+            print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
+            print("The dealer has dealt a higher number than you, hence you win")
     print("Thanks for playing!")
 
 main()
