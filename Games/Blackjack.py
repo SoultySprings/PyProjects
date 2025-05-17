@@ -1,3 +1,5 @@
+import random
+
 def main():
     print("The game of Blackjack remade:")
     print('''The rules are simply that:
@@ -11,4 +13,27 @@ def main():
     8. If after hitting or staying, ur number is higher than then the dealer but below 21, you win!
     
     Shall we start the game?''')
+    game()
 
+def game():
+    dealer_number = random.randint(1, 21)
+    user_number = random.randint(1, 21)
+    print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
+    response = input("Do you want to hit or stay? H for Hit or S for Stay.")
+    if response == "H":
+        user_number = user_number + random.randint(1, 11)
+        if user_number > 21:
+            print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
+            print("You have dealt a higher number, hence lose")
+        elif user_number > dealer_number and user_number <= 21:
+            print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
+            print("You have dealt a higher number than the dealer but below 21, hence you win")
+    elif response == "S":
+        dealer_number = dealer_number + random.randint(1, 11)
+        if dealer_number > 21:
+            print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
+            print("The dealer has dealt a higher number than 21, hence you win")
+        elif dealer_number > user_number and dealer_number <= 21:
+            print(f"The dealer has dealt : {dealer_number}, your number is : {user_number}.")
+            print("The dealer has dealt a higher number than you, hence you lose")
+    print("Thanks for playing!")
