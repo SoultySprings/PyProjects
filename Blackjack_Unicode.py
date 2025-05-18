@@ -187,4 +187,19 @@ def displayCards(cards) :
 
 
 def getMove(playerHand, money) :
+    while True:
+        moves = ['(H)it', '(S)tand']
+
+        if len(playerHand) == 2 and money > 0:
+            moves.append('(D)ouble Down')
+
+        movePrompt = ', '.join(moves) + '> '
+        move = input(movePrompt).upper()
+
+        if move in ('H', 'S'):
+            return move
+        if move in 'D' and '(D)ouble Down' in moves :
+            return move
+
+
 
