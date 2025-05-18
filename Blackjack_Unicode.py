@@ -121,6 +121,14 @@ def getBet(maxbet):
             return bet
 
 def getDeck() :
+    deck = []
+    for suit in (hearts, diamonds, spades, clubs):
+        for rank in range(2, 11) :
+            deck.append((str(rank), suit))
+        for rank in ('J', 'Q', 'K', 'A'):
+            deck.append((rank, suit))
+    random.shuffle(deck)
+    return deck
 
 def displayHands(dealerHand, playerHand, showDealerHand) :
 
