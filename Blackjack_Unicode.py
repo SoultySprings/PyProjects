@@ -28,7 +28,7 @@ Rules:
     The dealer stops hitting at 17.
     ''')
 
-    money = input('Choose the amount of money you want to start with (min 0; max 10000): ')
+    money = int(input('Choose the amount of money you want to start with (min 0; max 10000): '))
     if money <= 100000 and money > 0 :
         while True:
             if money == 0 :
@@ -42,7 +42,7 @@ Rules:
 
             print(f'Bet : {bet}')
             while True:
-                displayHands(dealerHand, playerHand)
+                displayHands(dealerHand, playerHand, False)
                 print()
 
                 if getHandValue(playerHand) > 21:
@@ -166,16 +166,16 @@ def displayCards(cards) :
     rows = ['', '', '', '', '']
 
     for i, card in enumerate(cards) :
-        rows[0] += ' ____ '
+        rows[0] += ' ___  '
         if card == backside:
-            rows[1] += '|## |'
-            rows[2] += '|###|'
-            rows[3] += '| ##|'
+            rows[1] += '|## | '
+            rows[2] += '|###| '
+            rows[3] += '| ##| '
         else:
             rank, suit = card
-            rows[1] += '|{}  |'.format(rank.ljust(2))
-            rows[2] += '| {} |'.format(suit)
-            rows[3] += '|__{}|'.format(rank.rjust(2),'_')
+            rows[1] += '|{} | '.format(rank.ljust(2))
+            rows[2] += '| {} | '.format(suit)
+            rows[3] += '|_{}| '.format(rank.rjust(2,'_'))
 
     for row in rows:
         print(row)
