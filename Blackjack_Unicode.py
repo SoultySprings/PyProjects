@@ -202,4 +202,5 @@ def getMove(playerHand, money) :
             return move
 
 
-
+if __name__ == '__main__':
+    main()
