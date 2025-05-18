@@ -17,6 +17,7 @@ Diamonds    :   {diamonds}
 Spades      :   {spades}       
 Clubs       :   {clubs}''')
 
+
 def main() :
     print('''
 Rules:
@@ -31,6 +32,7 @@ Rules:
     In case of a tie, the bet is returned to the player.
     The dealer stops hitting at 17.
     ''')
+
     money = input('Choose the amount of money you want to start with (min 0; max 10000): ')
     if money <= 100000 and money > 0 :
         while True:
@@ -120,6 +122,7 @@ def getBet(maxbet):
         if 1<= bet <= maxbet :
             return bet
 
+
 def getDeck() :
     deck = []
     for suit in (hearts, diamonds, spades, clubs):
@@ -130,11 +133,26 @@ def getDeck() :
     random.shuffle(deck)
     return deck
 
+
 def displayHands(dealerHand, playerHand, showDealerHand) :
+    if showDealerHand:
+        print('Dealer : ', getHandValue(dealerHand))
+        displayCards(dealerHand)
+    else :
+        print('Dealer : ???')
+        displayCards([backside] + dealerHand[1:])
+
+    print('Player : ', getHandValue(playerHand))
+    displayCards(playerHand)
+
 
 def getHandValue(cards) :
 
+
+
 def displayCards(cards) :
+
+
 
 def getMove(playerHand, money) :
 
