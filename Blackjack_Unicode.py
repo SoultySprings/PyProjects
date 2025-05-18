@@ -37,7 +37,8 @@ Rules:
             if money == 0 :
                 print("You're broke!")
                 sys.exit()
-            bet = input("Enter your bet money : ")
+            print(f'You have choosen to start with ${money}')
+            bet = getBet(money)
             deck = getDeck()
             dealerHand = [deck.pop(), deck.pop()]
             playerHand = [deck.pop(), deck.pop()]
@@ -99,8 +100,25 @@ Rules:
             input('Press enter to continue...')
             print('\n\n')
 
+    else :
+        print('You have entered a invalid or higher value and cannot proceed!')
+        input('Press enter to continue...')
+        print('\n\n')
+        sys.exit()
+
 
 def getBet(maxbet):
+    while True:
+        bet = input('How much do you want to bet? : ').upper().strip()
+        if bet == 'QUIT' :
+            print('Thank you for playing!')
+            sys.exit()
+        if not bet.isdecimal() :
+            continue
+
+        bet = int(bet)
+        if 1<= bet <= maxbet :
+            return bet
 
 def getDeck() :
 
