@@ -10,12 +10,7 @@ hearts = chr(9829)
 diamonds = chr(9830)
 spades = chr(9824)
 clubs = chr(9827)
-
-print(f'''
-Hearts      :   {hearts}    
-Diamonds    :   {diamonds}
-Spades      :   {spades}       
-Clubs       :   {clubs}''')
+backside = 'backside'
 
 
 def main() :
