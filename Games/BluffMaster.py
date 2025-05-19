@@ -65,7 +65,6 @@ def main() :
     # print(playerCash)
     playerDices = getDices()
     playerDicesOneArray = playerDices.reshape(10)
-    print(playerDicesOneArray)
     playerNum = 0
     for player in players :
         showDices(player, playerDices, playerNum)
@@ -91,7 +90,6 @@ def getBet() :
 
 def getDices():
     userDices = np.random.randint(1,6,size=(numberOfPlayers, numberOfDices))
-    print(userDices)
     return userDices
 
 def showDices(NameofCurrentPlayer, playerDices, playerNumber) :
