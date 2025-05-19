@@ -75,6 +75,11 @@ def main() :
         showDices(player, playerDices, False, playerNum)
         playerNum += 1
 
+
+    while True:
+        for player in players :
+            getPlayerReponse(playerNum)
+            if get
     #playerDices = playerDices.reshape((2,5))
     #for i in range(1,2):
     #    print(playerDices.)
@@ -91,9 +96,9 @@ def getDices():
     return userDices
 
 def showDices(NameofCurrentPlayer, playerDices, showOpponentHand, playerNumber) :
-    if showOpponentHand == False :
-        for i in range(numberOfDices):
-            print(diceDict[0],end="")
+    # if showOpponentHand == False :
+    #     for i in range(numberOfDices):
+    #         print(diceDict[0],end="")
     # else :
 
 
@@ -102,6 +107,19 @@ def showDices(NameofCurrentPlayer, playerDices, showOpponentHand, playerNumber) 
         print(f"{diceDict[dice]}", end="")
 
     input("Press Enter to continue, if your opponent has closed his eyes...")
+
+def getPlayerReponse(CurrPlayer) :
+    print(f"Whats your guess - {CurrPlayer}? : ")
+    PlayerDiceGuess = input("Enter Dice Upper Value Choice : ")
+    PlayerNumDice = input("Enter the number of dices you guess are : ")
+    PlayerLiarChoice = input("Do you think your opponent is bluffing? (Y) for Yes and (N) for No : ")
+    if PlayerLiarChoice.lower() == "Y" :
+        False
+    return PlayerDiceGuess, PlayerNumDice, PlayerLiarChoice
+
+def GameLogic(PlayerResponse, PlayerDiceGuess, PlayerNumDice) :
+    if PlayerResponse
+
 
 if __name__ == '__main__':
     main()
