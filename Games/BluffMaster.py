@@ -46,60 +46,62 @@ diceDict = {
 
 
 def main() :
-    print(diceDict[0])
-    print(diceDict[1])
-    print(diceDict[2])
-    print(diceDict[3])
-    print(diceDict[4])
-    print(diceDict[5])
-    print(diceDict[6])
-#     player_name1 = input("Enter the name of player 1 : ")
-#     player_name2 = input("Enter the name of player 2 : ")
-#     players = [player_name1, player_name2]
-#     playerCash = np.array([])
-#     playerDices = np.array([], dtype=np.int8)
-#
-#
-#     for player in players :
-#         money = getBet();
-#         print(f"Bet money of {player} is : ${money}")
-#         playerCash += [money]
-#     print(playerCash)
-#     playerDices = getDices()
-#     playerNum = 0
-#     for player in players :
-#         showDices(players, playerDices, False, playerNum)
-#         playerNum += 1
-#
-#     #playerDices = playerDices.reshape((2,5))
-#     #for i in range(1,2):
-#     #    print(playerDices.)
-#
-#
-#
-# def getBet() :
-#     bet = int(input("Enter the amount you want to bet : "))
-#     return bet
-#
-# def getDices():
-#     userDices = np.random.randint(1,6,size=(numberOfPlayers, numberOfDices))
-#     print(userDices)
-#     return userDices
-#
-# def showDices(playerNames, playerDices, showOpponentHand, playerNumber) :
-#     if showOpponentHand == False :
-#         print(" ___ ")
-#         print("|###|")
-#         print("|###|")
-#         print("|###|")
-#         print("|___|")
-#     else:
-#         print("You have the following dices :")
-#         print(" ___ ")
-#         print("|")
-#         print("___")
-#         print("___")
-#         print("___")
+
+
+    # print(diceDict[0])
+    # print(diceDict[1])
+    # print(diceDict[2])
+    # print(diceDict[3])
+    # print(diceDict[4])
+    # print(diceDict[5])
+    # print(diceDict[6])
+
+
+    player_name1 = input("Enter the name of player 1 : ")
+    player_name2 = input("Enter the name of player 2 : ")
+    players = [player_name1, player_name2]
+    playerCash = np.array([])
+    playerDices = np.array([], dtype=np.int8)
+
+
+    # for player in players :
+    #     money = getBet();
+    #     print(f"Bet money of {player} is : ${money}")
+    #     playerCash += [money]
+    # print(playerCash)
+    playerDices = getDices()
+    playerNum = 0
+    for player in players :
+        showDices(player, playerDices, False, playerNum)
+        playerNum += 1
+
+    #playerDices = playerDices.reshape((2,5))
+    #for i in range(1,2):
+    #    print(playerDices.)
+
+
+
+def getBet() :
+    bet = int(input("Enter the amount you want to bet : "))
+    return bet
+
+def getDices():
+    userDices = np.random.randint(1,6,size=(numberOfPlayers, numberOfDices))
+    print(userDices)
+    return userDices
+
+def showDices(NameofCurrentPlayer, playerDices, showOpponentHand, playerNumber) :
+    if showOpponentHand == False :
+        for i in range(numberOfDices):
+            print(diceDict[0],end="")
+    # else :
+
+
+    print(f"You ({NameofCurrentPlayer}'s) have the following dices :")
+    for dice in playerDices[playerNumber,]:
+        print(f"{diceDict[dice]}", end="")
+
+    input("Press Enter to continue, if your opponent has closed his eyes...")
 
 if __name__ == '__main__':
     main()
