@@ -8,11 +8,6 @@ numberOfPlayers = 2
 #BACKSIDE = backside
 diceCircle = chr(9679)
 diceDict = {
-0: f''' _______ 
-|???????| 
-|???????| 
-|_______| 
-''',
 1:f''' _______ 
 |       | 
 |   {diceCircle}   | 
@@ -61,7 +56,6 @@ def main() :
     player_name2 = input("Enter the name of player 2 : ")
     players = [player_name1, player_name2]
     playerCash = np.array([])
-    playerDices = np.array([], dtype=np.int8)
 
 
     # for player in players :
@@ -70,21 +64,26 @@ def main() :
     #     playerCash += [money]
     # print(playerCash)
     playerDices = getDices()
+    playerDicesOneArray = playerDices.reshape(10)
+    print(playerDicesOneArray)
     playerNum = 0
     for player in players :
-        showDices(player, playerDices, False, playerNum)
+        showDices(player, playerDices, playerNum)
         playerNum += 1
 
 
     while True:
-        for player in players :
-            getPlayerReponse(playerNum)
-            if get
-    #playerDices = playerDices.reshape((2,5))
-    #for i in range(1,2):
-    #    print(playerDices.)
-
-
+        playerNum = 0
+        while True:
+            for player in players :
+                print(f"Whats your guess - {player}? : ")
+                PlayerDiceGuess = int(input("Enter Dice Face Value Choice : "))
+                PlayerNumDice = int(input("Enter the number of dices you guess are : "))
+                PlayerLiarChoice = input("Do you think your opponent is bluffing? (Y) for Yes and (N) for No : ").lower()
+                print("\n\n")
+                if PlayerLiarChoice == 'y':
+                    GameLogic(playerDicesOneArray, PlayerDiceGuess, PlayerNumDice)
+                playerNum += 1
 
 def getBet() :
     bet = int(input("Enter the amount you want to bet : "))
@@ -95,7 +94,7 @@ def getDices():
     print(userDices)
     return userDices
 
-def showDices(NameofCurrentPlayer, playerDices, showOpponentHand, playerNumber) :
+def showDices(NameofCurrentPlayer, playerDices, playerNumber) :
     # if showOpponentHand == False :
     #     for i in range(numberOfDices):
     #         print(diceDict[0],end="")
@@ -106,20 +105,21 @@ def showDices(NameofCurrentPlayer, playerDices, showOpponentHand, playerNumber) 
     for dice in playerDices[playerNumber,]:
         print(f"{diceDict[dice]}", end="")
 
-    input("Press Enter to continue, if your opponent has closed his eyes...")
+    input("Press Enter to continue, if your opponent has closed his eyes...\n\n")
 
-def getPlayerReponse(CurrPlayer) :
-    print(f"Whats your guess - {CurrPlayer}? : ")
-    PlayerDiceGuess = input("Enter Dice Upper Value Choice : ")
-    PlayerNumDice = input("Enter the number of dices you guess are : ")
-    PlayerLiarChoice = input("Do you think your opponent is bluffing? (Y) for Yes and (N) for No : ")
-    if PlayerLiarChoice.lower() == "Y" :
-        False
-    return PlayerDiceGuess, PlayerNumDice, PlayerLiarChoice
+def GameLogic(PlayerDices, PlayerDiceGuess, PlayerNumDice) :
+    NumberOfActualFaceDice = np.count_nonzero(PlayerDices == PlayerDiceGuess)
 
-def GameLogic(PlayerResponse, PlayerDiceGuess, PlayerNumDice) :
-    if PlayerResponse
-
+    if int(PlayerNumDice) <= NumberOfActualFaceDice:
+        print(f'''\n\nYou win! 
+There were a total of {NumberOfActualFaceDice} of {PlayerDiceGuess}s, and you guessed {PlayerNumDice} of {PlayerDiceGuess}s. 
+Thank you for playing!\n''')
+        sys.exit()
+    else :
+        print(f'''\n\nYou lose!
+There were a total of {NumberOfActualFaceDice} of {PlayerDiceGuess}s, and you guessed {PlayerNumDice} of {PlayerDiceGuess}s.
+The opponent wins, thank you for playing!\n\n''')
+        sys.exit()
 
 if __name__ == '__main__':
     main()
