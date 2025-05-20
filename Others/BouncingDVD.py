@@ -1,4 +1,4 @@
-#Code as visible in earlier computers, the infamous bouncing DVD has been recreated in the following program
+#Code as visible in earlier computers, the famous bouncing DVD has been recreated in the following program
 
 import sys, random, time
 
