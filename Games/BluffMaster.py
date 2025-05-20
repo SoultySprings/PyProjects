@@ -1,7 +1,7 @@
 #The following is a game on two players bluffing, similar to the game between Cpt. Davy Jones and Will Turner in Potc 2
 #The game assumes that there are only two players playing atm.
 
-import numpy as np, random, sys
+import numpy as np, random, sys, os
 
 numberOfDices = 5
 numberOfPlayers = 2
@@ -42,7 +42,6 @@ diceDict = {
 
 def main() :
 
-
     # print(diceDict[0])
     # print(diceDict[1])
     # print(diceDict[2])
@@ -67,7 +66,7 @@ def main() :
     playerDicesOneArray = playerDices.reshape(10)
     playerNum = 0
     for player in players :
-        showDices(player, playerDices, playerNum)
+        showDices2(player, playerDices, playerNum)
         playerNum += 1
 
 
@@ -92,6 +91,22 @@ def getDices():
     userDices = np.random.randint(1,6,size=(numberOfPlayers, numberOfDices))
     return userDices
 
+
+def showDices2(NameofCurrentPlayer, playerDices, playerNumber) :
+    print(f"You ({NameofCurrentPlayer}) have the following dices :")
+    rows = ['', '', '', '', '']
+
+    for dice in playerDices[playerNumber,] :
+        rows[0] += ' _____  '
+        rows[1] += '|{}    | '.format(diceCircle)
+        rows[2] += '|  {}  | '.format(dice)
+        rows[3] += '|____{}| '.format(diceCircle)
+
+    for row in rows :
+        print(row)
+
+    input("Press Enter to continue, if your opponent has closed his eyes...\n\n")
+
 def showDices(NameofCurrentPlayer, playerDices, playerNumber) :
     # if showOpponentHand == False :
     #     for i in range(numberOfDices):
@@ -99,17 +114,18 @@ def showDices(NameofCurrentPlayer, playerDices, playerNumber) :
     # else :
 
 
-    print(f"You ({NameofCurrentPlayer}'s) have the following dices :")
+    print(f"You ({NameofCurrentPlayer}) have the following dices :")
     for dice in playerDices[playerNumber,]:
         print(f"{diceDict[dice]}", end="")
 
     input("Press Enter to continue, if your opponent has closed his eyes...\n\n")
 
+
 def GameLogic(PlayerDices, PlayerDiceGuess, PlayerNumDice) :
     NumberOfActualFaceDice = np.count_nonzero(PlayerDices == PlayerDiceGuess)
 
     if int(PlayerNumDice) <= NumberOfActualFaceDice:
-        print(f'''\n\nYou win! 
+        print(f'''\nYou win! 
 There were a total of {NumberOfActualFaceDice} of {PlayerDiceGuess}s, and you guessed {PlayerNumDice} of {PlayerDiceGuess}s. 
 Thank you for playing!\n''')
         sys.exit()
