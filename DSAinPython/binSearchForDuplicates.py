@@ -5,13 +5,12 @@ import binarySearch, random
 obj = binarySearch
 
 def testLocation(array, requestedItem, mid):
-    midNumber = array[mid]
-    if midNumber == requestedItem:
+    if array[mid] == requestedItem:
         if mid-1>=0 and array[mid-1] == requestedItem:
             return 'Left'
         else:
             return 'Found'
-    elif midNumber<requestedItem:
+    elif array[mid] >requestedItem:
         return 'Left'
     else:
         return 'Right'
@@ -21,7 +20,6 @@ def binarySearch(array, requestedItem):
     while low <= high:
         mid = (low+high)//2
         result = testLocation(array, requestedItem, mid)
-
         if result == 'Found':
             return f'The element was found at index {mid}.'
         elif result == 'Left':

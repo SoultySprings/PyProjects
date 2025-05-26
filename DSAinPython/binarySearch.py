@@ -20,8 +20,8 @@ def binarySearch(array, searchElement):
 
 def randomArray() :
     array, i = [], 0
-    while i<1000:
-        array.append(rd.randint(0, 10000))
+    while i<9:
+        array.append(rd.randint(1, 3))
         i+=1
     requestedItem = rd.choice(array)
     array.sort()
