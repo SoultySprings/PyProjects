@@ -1,29 +1,34 @@
 # This is a code for the Binary Search algorithm in Python
 import random as rd
 
-def binarySearch(array, requiredItem):
+def binarySearch(array, searchElement):
     low, high = 0, len(array)-1
-    print(f"Array is : {array} and required element is : {requiredItem}.")
+    i=1
+    print(f"Array is : {array} and required element is : {searchElement}.")
     while low <= high:
-        mid = (low + high) // 2
-        midNumber = array[mid]
-        if midNumber == requiredItem:
-            return f"Element at index {mid}."
-        elif midNumber > requiredItem:
-            high = mid - 1
-        elif midNumber < requiredItem:
-            low = mid + 1
+        midIndex = (low + high) // 2
+        midElement = array[midIndex]
+        if midElement == searchElement:
+            return f"Element at index {midIndex} and the number of steps were = {i}."
+        elif searchElement > midElement:
+            low = midIndex + 1
+            i +=1
+        elif searchElement < midElement:
+            high = midIndex - 1
+            i += 1
     return "Element not found!"
 
-if __name__ == '__main__':
-    array = []
-    i = 0
-    while i<20:
-        array.append(rd.randint(1, 500))
-        i += 1
+def randomArray() :
+    array, i = [], 0
+    while i<1000:
+        array.append(rd.randint(0, 10000))
+        i+=1
     requestedItem = rd.choice(array)
     array.sort()
-    print(array, requestedItem)
+    return array, requestedItem
+
+if __name__ == '__main__':
+    array, requestedItem = randomArray()
     print(binarySearch(array, requestedItem))
 
 
