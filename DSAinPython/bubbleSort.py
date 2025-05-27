@@ -2,12 +2,11 @@
 #The sorting algorithm is known to have a time complexity of O(n^2) for worst and O(n) for best and has
 #space complexity of O(1)
 
-#Noth that this sorting algorithm only works for numbers
+#Note that this sorting algorithm only works for numbers
 
 import random as rd
 
 def bubbleSort(array):
-    existingElements = []
     unsortedIndex = len(array) - 1
     sorted = False
     stepCount = 0
