@@ -7,20 +7,25 @@
 import random as rd
 
 def bubbleSort(array):
+    existingElements = []
     unsortedIndex = len(array) - 1
     sorted = False
-
+    stepCount = 0
     while not sorted:
         sorted = True
         for ithElement in range(unsortedIndex):
-            if array[ithElement] >array[ithElement + 1]:
+            if array[ithElement] > array[ithElement + 1]:
                 array[ithElement], array[ithElement+1] = array[ithElement+1], array[ithElement]
+                stepCount += 1*2
+                print(array)
                 sorted = False
         unsortedIndex -= 1
-    return array
+    return array, stepCount
 
 if __name__ == '__main__':
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    array = [1,1,1,1, 2, 3]
     rd.shuffle(array)
-    print(array)
-    print(bubbleSort(array))
+    print('Unsorted array : ', array)
+    print('Steps for them : ')
+    arraySort, steps = bubbleSort(array)
+    print('Sorted array : ', arraySort, f' and number of steps taken are : {steps}')
