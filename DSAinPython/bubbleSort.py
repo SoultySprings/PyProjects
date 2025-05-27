@@ -1,3 +1,24 @@
 #The following code contains an implementation of the bubble sort in Python
 #The sorting algorithm is known to have a time complexity of O(n^2) for worst and O(n) for best and has
 #space complexity of O(1)
+
+import random as rd
+
+def bubbleSort(array):
+    unsortedIndex = len(array) - 1
+    sorted = False
+
+    while not sorted:
+        sorted = True
+        for ithElement in range(unsortedIndex):
+            if array[ithElement] >array[ithElement + 1]:
+                array[ithElement], array[ithElement+1] = arrau[ithElement+1], array[ithElement]
+                sorted = False
+        unsortedIndex -= 1
+    return array
+
+if __name__ == '__main__':
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    rd.shuffle(array)
+    print(array)
+    print(bubbleSort(array))
