@@ -8,16 +8,16 @@ import random as rd
 
 def selectionSort(array):
     steps = 0
-    for ithIndex in range(len(array)-1):
-        lowestNumIndex = ithIndex
+    for ith_Index in range(len(array)-1):
+        lowestNumIndex = ith_Index
 
-        for jthIndex in range(ithIndex+1, len(array)):
-            if array[jthIndex] < array[lowestNumIndex]:
+        for jth_Index in range(ith_Index+1, len(array)):
+            if array[jth_Index] < array[lowestNumIndex]:
                 steps = steps + 1
-                lowestNumIndex = jthIndex
+                lowestNumIndex = jth_Index
 
-        if lowestNumIndex != ithIndex:
-            array[ithIndex], array[lowestNumIndex] = array[lowestNumIndex], array[ithIndex]
+        if lowestNumIndex != ith_Index:
+            array[ith_Index], array[lowestNumIndex] = array[lowestNumIndex], array[ith_Index]
     return array, steps
 
 if __name__ == "__main__":
