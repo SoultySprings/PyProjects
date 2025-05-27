@@ -2,6 +2,8 @@
 #The sorting algorithm is known to have a time complexity of O(n^2) for worst and O(n) for best and has
 #space complexity of O(1)
 
+#Noth that this sorting algorithm only works for numbers
+
 import random as rd
 
 def bubbleSort(array):
@@ -12,7 +14,7 @@ def bubbleSort(array):
         sorted = True
         for ithElement in range(unsortedIndex):
             if array[ithElement] >array[ithElement + 1]:
-                array[ithElement], array[ithElement+1] = arrau[ithElement+1], array[ithElement]
+                array[ithElement], array[ithElement+1] = array[ithElement+1], array[ithElement]
                 sorted = False
         unsortedIndex -= 1
     return array
