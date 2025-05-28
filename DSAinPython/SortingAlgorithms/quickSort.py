@@ -28,5 +28,7 @@ if __name__ == '__main__':
     array = list(range(1,10))
     rd.shuffle(array)
     print('Unsorted array:', array)
-    arraySorted, stepsTaken = quickSort(array, 0, len(array)-1, 0)
-    print(f'Sorted array: {arraySorted} and steps taken are: {stepsTaken}.')
+
+    sortedArray, stepsTaken = quickSort(array, 0, len(array)-1, 0)
+
+    print(f'Sorted array: {sortedArray} and steps taken are: {stepsTaken}.')

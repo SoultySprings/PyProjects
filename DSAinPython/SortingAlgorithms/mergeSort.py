@@ -43,6 +43,8 @@ if __name__ == '__main__':
     array = list(range(1,10))
     rd.shuffle(array)
     print('Unsorted array : ', array)
-    arraySorted, steps = mergeSort(array, len(array))
-    print(f'Sorted for them : {arraySorted} and steps taken are: {steps}')
+
+    sortedArray, stepsTaken = mergeSort(array, len(array))
+
+    print(f'Sorted for them : {sortedArray} and steps taken are: {stepsTaken}')
 

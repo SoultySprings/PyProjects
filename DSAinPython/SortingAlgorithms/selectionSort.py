@@ -23,7 +23,8 @@ def selectionSort(array):
 if __name__ == "__main__":
     array = list(range(1,10))
     rd.shuffle(array)
-    print(f'The unsorted array is: {array}.')
-    sortedArray, Steps = selectionSort(array)
+    print(f'Unsorted array : {array}.')
 
-    print(f'and the sorted is: {sortedArray} and the steps is: {Steps}.')
+    sortedArray, stepsTaken = selectionSort(array)
+
+    print(f'Sorted array : {sortedArray} and the steps is: {stepsTaken}.')

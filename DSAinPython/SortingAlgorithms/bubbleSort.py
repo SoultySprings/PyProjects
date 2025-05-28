@@ -24,7 +24,8 @@ def bubbleSort(array):
 if __name__ == '__main__':
     array = list(range(1,10))
     rd.shuffle(array)
-    print('Unsorted array : ', array)
-    print('Steps for them : ')
-    arraySort, steps = bubbleSort(array)
-    print('Sorted array : ', arraySort, f' and number of steps taken are : {steps}')
+    print(f'Unsorted array : {array}')
+
+    sortedArray, stepsTaken = bubbleSort(array)
+
+    print(f'Sorted array : {sortedArray} and number of steps taken are : {stepsTaken}')

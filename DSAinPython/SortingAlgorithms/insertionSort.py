@@ -24,6 +24,8 @@ def insertionSort(array):
 if __name__ == "__main__":
     array = list(range(1,10))
     rd.shuffle(array)
-    print(f'The unsorted array is : {array}.')
-    arr, steps = insertionSort(array)
-    print(f'The sorted array is : {arr}, and the number of steps taken are : {steps}.')
+    print(f'Unsorted array : {array}.')
+
+    sortedArray, stepsTaken = insertionSort(array)
+
+    print(f'Sorted array {sortedArray}, and the number of steps taken are : {stepsTaken}.')
