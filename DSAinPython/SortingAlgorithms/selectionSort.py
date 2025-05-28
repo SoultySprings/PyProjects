@@ -7,7 +7,7 @@
 import random as rd
 
 def selectionSort(array):
-    steps = 0
+    steps = 0 #Can be ignored
     for ith_Index in range(len(array)-1):
         lowestNumIndex = ith_Index
 

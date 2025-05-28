@@ -5,8 +5,9 @@
 #Note that this sorting algorithm only works for numbers
 
 import random as rd
+
 def insertionSort(array):
-    stepsTaken = 0
+    stepsTaken = 0 #Can be ignored
     for index in range(1,len(array)):
         temporaryValue = array[index]
         position = index - 1

@@ -6,7 +6,7 @@
 import random as rd
 
 def mergeSort(array, length):
-    stepsTaken = 0
+    stepsTaken = 0 #Can be ignored
     if length > 1:
         mid = length // 2
         arrayFirst = array[:mid]
@@ -21,23 +21,23 @@ def mergeSort(array, length):
             if arrayFirst[ithElement] <= arraySecond[jthElement]:
                 array[kthElement] = arrayFirst[ithElement]
                 ithElement += 1
-                stepsTaken += 1
+                stepsTaken += 1 #Can be ignored
             else:
                 array[kthElement] = arraySecond[jthElement]
                 jthElement += 1
-                stepsTaken += 1
+                stepsTaken += 1 #Can be ignored
             kthElement += 1
         while ithElement < lengthFirst:
             array[kthElement] = arrayFirst[ithElement]
             ithElement += 1
             kthElement += 1
-            stepsTaken += 1
+            stepsTaken += 1 #Can be ignored
         while jthElement < lengthSecond:
             array[kthElement] = arraySecond[jthElement]
             jthElement += 1
             kthElement += 1
-            stepsTaken += 1
-    return array, stepsTaken
+            stepsTaken += 1 #Can be ignored
+    return array, stepsTaken #steps can be ignored
 
 if __name__ == '__main__':
     array = list(range(1,10))

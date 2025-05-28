@@ -9,7 +9,7 @@ import random as rd
 def bubbleSort(array):
     unsortedIndex = len(array) - 1
     sorted = False
-    stepCount = 0
+    stepCount = 0 #Can be ignored
     while not sorted:
         sorted = True
         for ithElement in range(unsortedIndex):

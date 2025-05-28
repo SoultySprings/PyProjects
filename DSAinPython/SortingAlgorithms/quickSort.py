@@ -12,16 +12,16 @@ def partition(array, low, high, steps):
         if array[jth_Element] <= pivot:
             ith_Element += 1
             array[ith_Element], array[jth_Element] = array[jth_Element], array[ith_Element]
-            steps += 1
+            steps += 1 #Can be ignored
     array[ith_Element+1], array[high] = array[high], array[ith_Element+1]
-    steps += 1
+    steps += 1 #Can be ignored
     return ith_Element+1, steps
 
 def quickSort(array, low, high, steps):
     if low<high:
-        part, steps = partition(array, low, high, steps)
-        quickSort(array, low, part-1, steps)
-        quickSort(array, part+1, high, steps)
+        part, steps = partition(array, low, high, steps) #steps variable can be ignored
+        quickSort(array, low, part-1, steps) #steps variable can be ignored
+        quickSort(array, part+1, high, steps) #steps variable can be ignored
     return array, steps
 
 if __name__ == '__main__':
