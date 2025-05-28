@@ -3,6 +3,7 @@
 #The time complexity for the algorithm is 2N, but is taken as O(N)
 
 import random as rd
+
 def averageCelsius(fahrenheitReadings):
     if not fahrenheitReadings:
         return None
