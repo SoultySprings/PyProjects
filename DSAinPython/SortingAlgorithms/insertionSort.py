@@ -22,7 +22,7 @@ def insertionSort(array):
     return array, stepsTaken
 
 if __name__ == "__main__":
-    array  = [1,2,3,4,5,6,7,8,9]
+    array = list(range(1,10))
     rd.shuffle(array)
     print(f'The unsorted array is : {array}.')
     arr, steps = insertionSort(array)

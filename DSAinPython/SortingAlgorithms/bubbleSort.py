@@ -22,7 +22,7 @@ def bubbleSort(array):
     return array, stepCount
 
 if __name__ == '__main__':
-    array = [1,1,1,1, 2, 3]
+    array = list(range(1,10))
     rd.shuffle(array)
     print('Unsorted array : ', array)
     print('Steps for them : ')
