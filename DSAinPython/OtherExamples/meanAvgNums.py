@@ -1,5 +1,6 @@
-#This code has been taken from the book The Common Sense Guide to DSA (in short TCSG to DSA)
+#This code has been taken from the book A Common Sense Guide to DSA (in short A CSG to DSA)
 #In short calculates the mean of even, odd and then overall numbers present in the array
+#The time complexity for the algorithm is 3N+3 but can be taken as O(N)
 
 def averageEvenOddOverall(array):
     sumEven, sumOdd, sumOverall = 0,0,0
