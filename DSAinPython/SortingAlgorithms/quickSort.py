@@ -1,6 +1,6 @@
 #The following code contains an implementation of the quick sort in Python
 #The sorting algorithm is known to have a time complexity of O(nlogn) for worst and O(1) for best
-#Though both of bubble sort and selection sort have the same time complexity however insertion is twice faster than seletion and four times than bubble sort.
+#This is considered to have a better time complexity than that of Insertion, Bubble and Quick sort due to having O(nlogn) complexity
 #Note that this sorting algorithm only works for numbers
 
 import random as rd
